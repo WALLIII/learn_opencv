@@ -1,0 +1,25 @@
+
+TARGET = ./main
+
+SRCS := $(wildcard ./src/*.cpp ./*.cpp)
+
+OBJS := $(patsubst %cpp,%o,$(SRCS))
+
+CFLG = -g -Wall -I//usr/local/Cellar/opencv@2/2.4.13.7_5/include -Iinc -I./ -std=c++11
+
+LDFG = -Wl, $(shell pkg-config opencv --cflags --libs)
+
+CXX = g++
+
+$(TARGET) : $(OBJS)
+	$(CXX) -o $(TARGET) $(OBJS) $(LDFG)
+
+%.o:%.cpp
+	$(CXX) $(CFLG) -c $< -o $@ 
+
+.PHONY : clean
+clean:
+	-rm ./*.o
+————————————————
+版权声明：本文为CSDN博主「远在远方的风比远方更远」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_22073849/article/details/88893201

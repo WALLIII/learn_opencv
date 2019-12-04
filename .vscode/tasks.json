@@ -1,0 +1,67 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "build with clang",
+            "command": "clang++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-I",
+                "/usr/local/Cellar/opencv@2/2.4.13.7_5/include/opencv",
+                "-I",
+                "/usr/local/Cellar/opencv@2/2.4.13.7_5/include",
+                "-L",
+                "/usr/local/Cellar/opencv@2/2.4.13.7_5/lib",
+                "-l",
+                "opencv_calib3d",
+                "-l",
+                "opencv_contrib",
+                "-l",
+                "opencv_core",
+                "-l",
+                "opencv_features2d",
+                "-l",
+                "opencv_flann",
+                "-l",
+                "opencv_gpu",
+                "-l",
+                "opencv_highgui",
+                "-l",
+                "opencv_imgproc",
+                "-l",
+                "opencv_legacy",
+                "-l",
+                "opencv_ml",
+                "-l",
+                "opencv_nonfree",
+                "-l",
+                "opencv_objdetect",
+                "-l",
+                "opencv_ocl",
+                "-l",
+                "opencv_photo",
+                "-l",
+                "opencv_stitching",
+                "-l",
+                "opencv_superres",
+                "-l",
+                "opencv_ts",
+                "-l",
+                "opencv_video",
+                "-l",
+                "opencv_videostab"
+            ],
+            "options": {
+                "cwd": "/usr/bin"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
